@@ -85,7 +85,7 @@ export default {
       currentTime: "",
       city: "Indonesia",
       weather: null,
-      apiKey: "ed25b4afda210cc9969e07ca281564e2",
+      apiKey: process.env.VUE_APP_API_KEY,
     };
   },
   mounted() {
