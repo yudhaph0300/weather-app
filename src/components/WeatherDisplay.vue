@@ -18,7 +18,9 @@
             font-scale="2"
             class="mb-3"
           ></b-icon>
-          <p class="mb-0">{{ weather.name }}, {{ weather.sys.country }}</p>
+          <p class="mb-0">
+            {{ weather ? `${weather.name}, ${weather.sys.country}` : "" }}
+          </p>
         </b-card>
       </b-col>
       <b-col cols="6" md="3" sm="6" class="mx-auto mb-2">
@@ -30,7 +32,7 @@
             font-scale="2"
             class="mb-3"
           ></b-icon>
-          <p class="mb-0">{{ weather.main.temp }}°C</p>
+          <p class="mb-0">{{ weather ? `${weather.main.temp}` : "" }}°C</p>
         </b-card>
       </b-col>
       <b-col cols="6" md="3" sm="6" class="mx-auto mb-2">
@@ -42,7 +44,9 @@
             font-scale="2"
             class="mb-3"
           ></b-icon>
-          <p class="mb-0">{{ weather.weather[0].description }}</p>
+          <p class="mb-0">
+            {{ weather ? `${weather.weather[0].description}` : "" }}
+          </p>
         </b-card>
       </b-col>
       <b-col cols="6" md="3" sm="6" class="mx-auto mb-2">
@@ -54,7 +58,7 @@
             font-scale="2"
             class="mb-3"
           ></b-icon>
-          <p class="mb-0">{{ weather.wind.speed }} m/s</p>
+          <p class="mb-0">{{ weather ? `${weather.wind.speed}` : "" }} m/s</p>
         </b-card>
       </b-col>
     </b-row>
