@@ -89,7 +89,7 @@ export default {
       currentTime: "",
       city: "Indonesia",
       weather: null,
-      apiKey: "ed25b4afda210cc9969e07ca281564e2",
+      apiKey: process.env.VUE_APP_API_KEY,
     };
   },
   mounted() {
@@ -105,7 +105,7 @@ export default {
     getWeather() {
       this.$http
         .get(
-          `http://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=${this.apiKey}`
+          `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=${this.apiKey}`
         )
         .then((response) => {
           this.weather = response.data;
